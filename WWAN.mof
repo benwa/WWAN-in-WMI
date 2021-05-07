@@ -1,0 +1,67 @@
+//=============================================================================
+// Wireless Wide Area Network
+// 2021-05-07
+// Bennett Blodinger
+//=============================================================================
+
+[ SMS_Report (TRUE),
+  SMS_Group_Name ("Wireless Wide Area Network"),
+  SMS_Class_ID ("MICROSOFT|WWAN|1.0"),
+  Namespace ("root\\\\cimv2") ]
+class WWAN : SMS_Class_Template
+{
+    [ SMS_Report (TRUE), key ]
+    String     DeviceId;
+    [ SMS_Report (TRUE) ]
+    String     AdditionalPdpContext;
+    [ SMS_Report (TRUE) ]
+    String     CellularClass;
+    [ SMS_Report (TRUE) ]
+    String     Description;
+    [ SMS_Report (TRUE) ]
+    String     DeviceType;
+    [ SMS_Report (TRUE) ]
+    String     FirmwareVersion;
+    [ SMS_Report (TRUE) ]
+    String     Guid;
+    [ SMS_Report (TRUE) ]
+    String     Manufacturer;
+    [ SMS_Report (TRUE) ]
+    String     Model;
+    [ SMS_Report (TRUE) ]
+    String     Name;
+    [ SMS_Report (TRUE) ]
+    String     ParentInterfaceGuid;
+    [ SMS_Report (TRUE) ]
+    String     PhysicalAddress;
+    [ SMS_Report (TRUE) ]
+    String     ProviderName;
+    [ SMS_Report (FALSE) ]
+    String     Roaming;
+    [ SMS_Report (FALSE) ]
+    String     RssiRscp;
+    [ SMS_Report (FALSE) ]
+    Real32     Signal;
+    [ SMS_Report (FALSE) ]
+    String     State;
+};
+
+[ SMS_Report (TRUE),
+  SMS_Group_Name ("Wireless Wide Area Network - SIM"),
+  SMS_Class_ID ("MICROSOFT|WWAN_SIM|1.0"),
+  Namespace ("root\\\\cimv2") ]
+class WWAN_SIM : SMS_Class_Template
+{
+    [ SMS_Report (TRUE), key ]
+    String     SimIccId;
+    [ SMS_Report (TRUE) ]
+    String     AdapterGuid;
+    [ SMS_Report (FALSE) ]
+    String     EmergencyMode;
+    [ SMS_Report (FALSE) ]
+    String     State;
+    [ SMS_Report (TRUE) ]
+    String     SubscriberId;
+    [ SMS_Report (TRUE) ]
+    String     TelephoneNumbers[];
+};
